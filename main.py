@@ -15,3 +15,4 @@ def on_frame(frame):
         cv2.waitKey(10)
 
 client.add_listener(scrcpy.EVENT_FRAME, on_frame)
+client.start(threaded=True)
