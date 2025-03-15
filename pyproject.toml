@@ -15,5 +15,5 @@ setuptools = "<68.0.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.incremental]
+[project]
 name = "automirror"
