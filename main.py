@@ -2,7 +2,7 @@ import scrcpy
 from adbutils import adb 
 import cv2
 
-adb.connect("10.122.84.85:22614")
+adb.connect("127.0.0.1:5555")
 client = scrcpy.Client(device=adb.device_list()[0])
 
 def on_frame(frame):
