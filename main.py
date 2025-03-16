@@ -1,10 +1,14 @@
 import scrcpy
-from adbutils import adb 
+from adbutils import adb
+import adbutils
 import cv2
 
-# adb.connect("127.0.0.1:5555")
-client = scrcpy.Client(device=adb.device_list()[0])
-print(client)
+
+try:
+    adb = adbutils.AdbClient(host="10.122.84.85", port=8000, socket_timeout=10)
+    client = scrcpy.Client(device=adb.device_list()[0])
+except Exception as e:
+    print("Connection failed:", str(e))
 
 def on_frame(frame):
     # If you set non-blocking (default) in constructor, the frame event receiver 
